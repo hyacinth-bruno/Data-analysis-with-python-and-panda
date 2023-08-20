@@ -58,7 +58,8 @@ def load_data(city, month, day):
         df = df[df['month'] == month]
         
         
-    df['day_of_week'] = df['Start Time'].dt.weekday_name
+    # df['day_of_week'] = df['Start Time'].dt.weekday_name
+    df['day_of_week'] = df['Start Time'].dt.day_name()
     if day != 'all':
         df = df[df['day_of_week'] == day.title()]
 
